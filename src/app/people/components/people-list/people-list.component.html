@@ -30,7 +30,8 @@
       <mat-list-item *cdkVirtualFor="let person of people"
                      role="listitem"
                      class="list-item my-1">
-        {{person.name}}
+        {{person.name | titlecase}} -
+        {{person.dateOfBirth | date: "dd/MM/yyyy" | empty}}
         <div class="spacer"></div>
         <button mat-icon-button>
           <mat-icon>border_color</mat-icon>

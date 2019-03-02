@@ -2,51 +2,57 @@
   "people": [
     {
       "id": 1,
-      "name": "John Doe"
+      "name": "john doe",
+      "dateOfBirth": "2019-02-11 13:59:01.896713"
     },
     {
       "id": 2,
-      "name": "Darth Vader"
+      "name": "darth vader",
+      "dateOfBirth": "2019-02-11 13:59:01.896713"
     },
     {
       "id": 3,
-      "name": "John Doe"
+      "name": "john doe",
+      "dateOfBirth": "2019-02-11 13:59:01.896713"
     },
     {
       "id": 4,
-      "name": "Darth Vader"
+      "name": "darth vader",
+      "dateOfBirth": "2019-02-11 13:59:01.896713"
     },
     {
       "id": 5,
-      "name": "John Doe"
+      "name": "john doe",
+      "dateOfBirth": "2019-02-11 13:59:01.896713"
     },
     {
       "id": 6,
-      "name": "Darth Vader"
+      "name": "darth vader",
+      "dateOfBirth": "2019-02-11 13:59:01.896713"
     },
     {
       "id": 7,
-      "name": "John Doe"
+      "name": "john doe"
     },
     {
       "id": 8,
-      "name": "Darth Vader"
+      "name": "darth vader"
     },
     {
       "id": 9,
-      "name": "John Doe"
+      "name": "john doe"
     },
     {
       "id": 10,
-      "name": "Darth Vader"
+      "name": "darth vader"
     },
     {
       "id": 11,
-      "name": "John Doe"
+      "name": "john doe"
     },
     {
       "id": 12,
-      "name": "Darth Vader"
+      "name": "darth vader"
     }
   ]
 }
