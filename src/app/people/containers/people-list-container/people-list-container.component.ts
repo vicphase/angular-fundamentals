@@ -9,9 +9,22 @@ import { Person } from '@app/people/person.model';
 })
 export class PeopleListContainerComponent implements OnInit {
   people: Person[];
+  filteredPeople: Person[];
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.people = this.route.snapshot.data.resolvedPeople;
+    this.filteredPeople = this.people;
+  }
+
+  filterPeople(filter: string): void {
+    if (!filter) {
+      this.filteredPeople = this.people;
+    } else {
+      const filterValue = filter.toLowerCase();
+      this.filteredPeople = this.people.filter(
+        person => person.name.toLowerCase().indexOf(filterValue) === 0
+      );
+    }
   }
 }

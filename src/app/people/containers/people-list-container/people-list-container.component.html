@@ -1,1 +1,3 @@
-<app-people-list [people]="people"></app-people-list>
+<app-people-list [people]="filteredPeople"
+                 (filterItems)="filterPeople($event)">
+</app-people-list>
