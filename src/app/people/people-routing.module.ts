@@ -1,10 +1,19 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+import { PeopleListContainerComponent } from './containers/people-list-container/people-list-container.component';
+import { PeopleResolverService } from './resolvers/people-resolver.service';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: PeopleListContainerComponent,
+    resolve: { resolvedPeople: PeopleResolverService }
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class PeopleRoutingModule { }
+export class PeopleRoutingModule {}

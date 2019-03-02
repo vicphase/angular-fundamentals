@@ -7,6 +7,10 @@ const routes: Routes = [
     loadChildren: 'app/auth/auth.module#AuthModule'
   },
   {
+    path: 'spa',
+    loadChildren: 'app/spa/spa.module#SpaModule'
+  },
+  {
     path: '',
     redirectTo: 'auth',
     pathMatch: 'full'
