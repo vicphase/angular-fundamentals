@@ -10,6 +10,7 @@ import { MyErrorStateMatcher } from '@app/shared/classes/error-state-matcher';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LoginFormComponent implements OnInit {
+  title = 'Angular Fundamentals';
   form: FormGroup;
   matcher = new MyErrorStateMatcher();
 
