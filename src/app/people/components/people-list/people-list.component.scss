@@ -1,0 +1,21 @@
+@import '~styles/variables';
+
+.list-item {
+  background-color: $background-color;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.add-button {
+  top: auto !important;
+  right: 20px !important;
+  bottom: 10px !important;
+  left: auto !important;
+  position: fixed !important;
+}
+
+cdk-virtual-scroll-viewport {
+  height: 70vh;
+}

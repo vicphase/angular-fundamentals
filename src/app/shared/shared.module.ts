@@ -1,7 +1,9 @@
+import { ScrollingModule } from '@angular/cdk/scrolling';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
@@ -19,11 +21,14 @@ const modules = [
   MatToolbarModule,
   // Layout
   MatCardModule,
+  MatDividerModule,
   MatListModule,
   // Buttons & Indicators
   MatButtonModule,
   MatIconModule,
-  MatProgressSpinnerModule
+  MatProgressSpinnerModule,
+  // CDK
+  ScrollingModule
 ];
 
 @NgModule({

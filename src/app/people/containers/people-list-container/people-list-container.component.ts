@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Person } from '@app/people/person.model';
 
 @Component({
   selector: 'app-people-list-container',
@@ -6,10 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./people-list-container.component.scss']
 })
 export class PeopleListContainerComponent implements OnInit {
-
-  constructor() { }
+  people: Person[];
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
+    this.people = this.route.snapshot.data.resolvedPeople;
   }
-
 }
