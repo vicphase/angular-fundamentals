@@ -1,14 +1,17 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { SharedModule } from '@app/shared/shared.module';
 
-import { SpaRoutingModule } from './spa-routing.module';
 import { SpaComponent } from './components/spa/spa.component';
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { SpaRoutingModule } from './spa-routing.module';
 
 @NgModule({
-  declarations: [SpaComponent],
+  declarations: [SpaComponent, ToolbarComponent],
   imports: [
     CommonModule,
-    SpaRoutingModule
+    SpaRoutingModule,
+    SharedModule
   ]
 })
 export class SpaModule { }
