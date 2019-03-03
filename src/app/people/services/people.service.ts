@@ -11,6 +11,10 @@ export class PeopleService {
   constructor(private http: HttpClient) {}
 
   getPeople(): Observable<Person[]> {
-    return this.http.get<Person[]>(this.apiUrl.concat('/people'));
+    let requestUrl;
+    environment.production
+      ? (requestUrl = this.apiUrl.concat('/people.json'))
+      : (requestUrl = this.apiUrl.concat('/people'));
+    return this.http.get<Person[]>(requestUrl);
   }
 }
