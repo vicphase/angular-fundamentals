@@ -5,9 +5,7 @@ import { Observable } from 'rxjs';
 
 import { Person } from '../person.model';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class PeopleService {
   apiUrl = environment.apiUrl;
   constructor(private http: HttpClient) {}
