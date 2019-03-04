@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { DataService } from '@app/core/services/data.service';
 
 @Component({
   selector: 'app-login-form-container',
@@ -7,11 +7,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./login-form-container.component.scss']
 })
 export class LoginFormContainerComponent implements OnInit {
-  constructor(private router: Router) {}
+  constructor(private dataService: DataService) {}
 
   ngOnInit() {}
 
   login(): void {
-    this.router.navigateByUrl('/spa');
+    this.dataService.login();
   }
 }

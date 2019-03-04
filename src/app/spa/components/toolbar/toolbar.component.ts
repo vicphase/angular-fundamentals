@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { DataService } from '@app/core/services/data.service';
 
 @Component({
   selector: 'app-toolbar',
@@ -7,11 +7,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./toolbar.component.scss']
 })
 export class ToolbarComponent implements OnInit {
-  constructor(private router: Router) {}
+  constructor(private dataService: DataService) {}
 
   ngOnInit() {}
 
   logout(): void {
-    this.router.navigateByUrl('/auth');
+    this.dataService.logout();
   }
 }

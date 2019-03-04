@@ -11,6 +11,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatToolbarModule } from '@angular/material/toolbar';
+
 import { EmptyPipe } from './pipes/empty.pipe';
 
 const modules = [
@@ -32,6 +33,12 @@ const modules = [
   ScrollingModule
 ];
 
+/**
+ * All the “dumb” components and pipes should be implemented here.
+ * These components don’t import and inject services from core or other features in their constructors.
+ * They should receive all data though attributes in the template of the component using them.
+ * This all sums up to the fact that SharedModule doesn’t have any dependency to the rest of our application.
+ */
 @NgModule({
   declarations: [EmptyPipe],
   imports: [CommonModule, modules],
