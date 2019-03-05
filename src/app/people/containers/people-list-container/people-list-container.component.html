@@ -1,3 +1,4 @@
 <app-people-list [people]="filteredPeople"
-                 (filterItems)="filterPeople($event)">
+                 (filterItems)="filterPeople($event)"
+                 (delete)="deletePerson($event)">
 </app-people-list>

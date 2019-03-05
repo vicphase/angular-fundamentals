@@ -11,6 +11,7 @@ export class PeopleListComponent implements OnInit {
   @Input() people: Person[] = [];
   listFilter: string;
   @Output() filterItems: EventEmitter<string> = new EventEmitter();
+  @Output() delete: EventEmitter<Person> = new EventEmitter();
 
   constructor() {}
 
@@ -18,5 +19,9 @@ export class PeopleListComponent implements OnInit {
 
   onFilterChange(filter: string): void {
     this.filterItems.emit(filter);
+  }
+
+  onDelete(person: Person): void {
+    this.delete.emit(person);
   }
 }

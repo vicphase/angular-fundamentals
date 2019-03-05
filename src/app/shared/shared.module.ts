@@ -5,6 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
@@ -14,8 +15,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 import { EmptyPipe } from './pipes/empty.pipe';
-
 
 const modules = [
   // Form controls
@@ -34,6 +35,8 @@ const modules = [
   MatButtonModule,
   MatIconModule,
   MatProgressSpinnerModule,
+  // Popups & Modals
+  MatDialogModule,
   // CDK
   ScrollingModule
 ];
@@ -45,8 +48,9 @@ const modules = [
  * This all sums up to the fact that SharedModule doesn’t have any dependency to the rest of our application.
  */
 @NgModule({
-  declarations: [EmptyPipe],
+  declarations: [EmptyPipe, ConfirmDialogComponent],
   imports: [CommonModule, modules],
-  exports: [modules, EmptyPipe]
+  exports: [modules, EmptyPipe],
+  entryComponents: [ConfirmDialogComponent]
 })
 export class SharedModule {}

@@ -17,7 +17,8 @@
     </div>
   </div>
 
-  <div class="row">
+  <div *ngIf="listFilter"
+       class="row">
     <div class="col-12">
       <p>Filtrado por: {{listFilter}}</p>
     </div>
@@ -37,7 +38,8 @@
                 [routerLink]="[person.id]">
           <mat-icon>border_color</mat-icon>
         </button>
-        <button mat-icon-button>
+        <button mat-icon-button
+                (click)="onDelete(person)">
           <mat-icon>delete</mat-icon>
         </button>
       </mat-list-item>
