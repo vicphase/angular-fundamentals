@@ -23,12 +23,22 @@ export class PersonFormContainerComponent implements OnInit {
   }
 
   submit(person: Person): void {
-    this.peopleService
-      .createPerson(person)
-      .pipe(
-        tap(() => this.router.navigateByUrl('/spa')),
-        take(1)
-      )
-      .subscribe();
+    if (person.id) {
+      this.peopleService
+        .updatePerson(person)
+        .pipe(
+          tap(() => this.router.navigateByUrl('/spa')),
+          take(1)
+        )
+        .subscribe();
+    } else {
+      this.peopleService
+        .createPerson(person)
+        .pipe(
+          tap(() => this.router.navigateByUrl('/spa')),
+          take(1)
+        )
+        .subscribe();
+    }
   }
 }

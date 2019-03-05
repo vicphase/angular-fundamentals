@@ -40,15 +40,15 @@
 
       <div class="row mb-3">
         <div class="col-12">
-          <button class="mr-3"
-                  mat-raised-button
-                  [routerLink]="['..']">
-            Cancelar
-          </button>
           <button mat-raised-button
+                  class="mr-3"
                   color="accent"
                   (click)="submit()">
             Guardar
+          </button>
+          <button mat-raised-button
+                  [routerLink]="['..']">
+            Cancelar
           </button>
         </div>
       </div>

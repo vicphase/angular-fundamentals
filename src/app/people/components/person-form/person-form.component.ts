@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Person } from '@app/people/models/person.model';
 import { MyErrorStateMatcher } from '@app/shared/classes/error-state-matcher';
@@ -8,7 +8,7 @@ import { MyErrorStateMatcher } from '@app/shared/classes/error-state-matcher';
   templateUrl: './person-form.component.html',
   styleUrls: ['./person-form.component.scss']
 })
-export class PersonFormComponent implements OnInit {
+export class PersonFormComponent implements OnInit, OnChanges {
   @Input() person: Person;
   form: FormGroup;
   matcher = new MyErrorStateMatcher();
@@ -23,6 +23,13 @@ export class PersonFormComponent implements OnInit {
   }
 
   ngOnInit() {}
+
+  ngOnChanges() {
+    if (this.person) {
+      this.form.patchValue(this.person);
+      this.form.get('dateOfBirth').patchValue(new Date(this.person.dateOfBirth));
+    }
+  }
 
   submit(): void {
     this.form.valid ? this.formSubmit.emit(this.form.value) : this.form.markAsTouched();

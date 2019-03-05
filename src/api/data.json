@@ -2,8 +2,8 @@
   "people": [
     {
       "id": 1,
-      "name": "john doe",
-      "dateOfBirth": "2019-02-11 13:59:01.896713"
+      "name": "john doel",
+      "dateOfBirth": "2019-02-11T19:59:01.896Z"
     },
     {
       "id": 2,
