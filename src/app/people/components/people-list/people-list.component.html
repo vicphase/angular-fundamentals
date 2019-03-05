@@ -33,7 +33,8 @@
         {{person.name | titlecase}} -
         {{person.dateOfBirth | date: "dd/MM/yyyy" | empty}}
         <div class="spacer"></div>
-        <button mat-icon-button>
+        <button mat-icon-button
+                [routerLink]="[person.id]">
           <mat-icon>border_color</mat-icon>
         </button>
         <button mat-icon-button>
@@ -44,6 +45,7 @@
   </mat-list>
 
   <button mat-fab
+          [routerLink]="['new-person']"
           class="add-button"
           color="primary">
     <mat-icon class="font-white">add</mat-icon>

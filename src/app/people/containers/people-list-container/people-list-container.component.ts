@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Person } from '@app/people/person.model';
+import { Person } from '@app/people/models/person.model';
 
 @Component({
   selector: 'app-people-list-container',

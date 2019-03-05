@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Person } from '@app/people/person.model';
+import { Person } from '@app/people/models/person.model';
 
 @Component({
   selector: 'app-people-list',
