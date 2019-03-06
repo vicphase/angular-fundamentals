@@ -10,7 +10,7 @@ export class PersonResolverService implements Resolve<Person> {
   constructor(private peopleService: PeopleService) {}
 
   resolve(route: ActivatedRouteSnapshot): Observable<Person> {
-    const id = +route.paramMap.get('id');
+    const id = +route.params.id;
     return this.peopleService.getPerson(id);
   }
 }

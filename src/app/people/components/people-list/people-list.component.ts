@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { Person } from '@app/people/models/person.model';
 
 @Component({
@@ -7,15 +7,11 @@ import { Person } from '@app/people/models/person.model';
   styleUrls: ['./people-list.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class PeopleListComponent implements OnInit {
+export class PeopleListComponent {
   @Input() people: Person[] = [];
   listFilter: string;
   @Output() filterItems: EventEmitter<string> = new EventEmitter();
   @Output() delete: EventEmitter<Person> = new EventEmitter();
-
-  constructor() {}
-
-  ngOnInit() {}
 
   onFilterChange(filter: string): void {
     this.filterItems.emit(filter);

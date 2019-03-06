@@ -6,10 +6,8 @@ import { DataService } from '@app/core/services/data.service';
   templateUrl: './toolbar.component.html',
   styleUrls: ['./toolbar.component.scss']
 })
-export class ToolbarComponent implements OnInit {
+export class ToolbarComponent {
   constructor(private dataService: DataService) {}
-
-  ngOnInit() {}
 
   logout(): void {
     this.dataService.logout();

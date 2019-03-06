@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { DataService } from '@app/core/services/data.service';
 
 @Component({
@@ -6,10 +6,8 @@ import { DataService } from '@app/core/services/data.service';
   templateUrl: './login-form-container.component.html',
   styleUrls: ['./login-form-container.component.scss']
 })
-export class LoginFormContainerComponent implements OnInit {
+export class LoginFormContainerComponent {
   constructor(private dataService: DataService) {}
-
-  ngOnInit() {}
 
   login(): void {
     this.dataService.login();

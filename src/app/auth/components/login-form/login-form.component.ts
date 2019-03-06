@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginRequest } from '@app/auth/models/login-request.model';
 import { MyErrorStateMatcher } from '@app/shared/classes/error-state-matcher';
@@ -9,11 +9,10 @@ import { MyErrorStateMatcher } from '@app/shared/classes/error-state-matcher';
   styleUrls: ['./login-form.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class LoginFormComponent implements OnInit {
+export class LoginFormComponent {
   title = 'Angular Fundamentals';
   form: FormGroup;
   matcher = new MyErrorStateMatcher();
-
   @Output() formSubmit: EventEmitter<LoginRequest> = new EventEmitter();
 
   constructor(private fb: FormBuilder) {
@@ -22,8 +21,6 @@ export class LoginFormComponent implements OnInit {
       password: ['', Validators.required]
     });
   }
-
-  ngOnInit() {}
 
   submit() {
     this.form.valid ? this.formSubmit.emit(this.form.value) : this.form.markAsTouched();

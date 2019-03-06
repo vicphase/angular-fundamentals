@@ -2,6 +2,7 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatMenuModule } from '@angular/material/menu';
 import { DataService } from '@app/core/services/data.service';
+import { DataServiceMock } from '@app/tests/app-services/data.service.mock';
 
 import { ToolbarComponent } from './toolbar.component';
 
@@ -13,7 +14,7 @@ describe('ToolbarComponent', () => {
     TestBed.configureTestingModule({
       imports: [MatMenuModule],
       declarations: [ToolbarComponent],
-      providers: [{ provide: DataService, useValue: {} }],
+      providers: [{ provide: DataService, useClass: DataServiceMock }],
       schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();
   }));
@@ -24,7 +25,11 @@ describe('ToolbarComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should logout', () => {
+    spyOn(component['dataService'], 'logout');
+
+    component.logout();
+
+    expect(component['dataService'].logout).toHaveBeenCalled();
   });
 });

@@ -1,6 +1,7 @@
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { DataService } from '@app/core/services/data.service';
+import { DataServiceMock } from '@app/tests/app-services/data.service.mock';
 
 import { LoginFormContainerComponent } from './login-form-container.component';
 
@@ -11,7 +12,7 @@ describe('LoginFormContainerComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [LoginFormContainerComponent],
-      providers: [{ provide: DataService, useValue: {} }],
+      providers: [{ provide: DataService, useClass: DataServiceMock }],
       schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();
   }));
@@ -22,7 +23,11 @@ describe('LoginFormContainerComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should login', () => {
+    spyOn(component['dataService'], 'login');
+
+    component.login();
+
+    expect(component['dataService'].login).toHaveBeenCalled();
   });
 });
