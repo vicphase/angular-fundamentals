@@ -1,4 +1,6 @@
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { DataService } from '@app/core/services/data.service';
 
 import { LoginFormContainerComponent } from './login-form-container.component';
 
@@ -8,9 +10,10 @@ describe('LoginFormContainerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LoginFormContainerComponent ]
-    })
-    .compileComponents();
+      declarations: [LoginFormContainerComponent],
+      providers: [{ provide: DataService, useValue: {} }],
+      schemas: [NO_ERRORS_SCHEMA]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

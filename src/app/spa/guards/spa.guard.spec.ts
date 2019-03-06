@@ -1,11 +1,14 @@
-import { TestBed, async, inject } from '@angular/core/testing';
+import { inject, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { DataService } from '@app/core/services/data.service';
 
 import { SpaGuard } from './spa.guard';
 
 describe('SpaGuard', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [SpaGuard]
+      imports: [RouterTestingModule],
+      providers: [SpaGuard, { provide: DataService, useValue: {} }]
     });
   });
 

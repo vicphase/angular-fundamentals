@@ -1,4 +1,7 @@
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { EmptyPipe } from '@app/shared/pipes/empty.pipe';
 
 import { PeopleListComponent } from './people-list.component';
 
@@ -8,9 +11,10 @@ describe('PeopleListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PeopleListComponent ]
-    })
-    .compileComponents();
+      imports: [ScrollingModule],
+      declarations: [PeopleListComponent, EmptyPipe],
+      schemas: [NO_ERRORS_SCHEMA]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
