@@ -7,12 +7,8 @@ import { Person } from '../models/person.model';
 
 @Injectable()
 export class PeopleService {
-  peopleUrl: string;
-  constructor(private http: HttpClient) {
-    environment.production
-      ? (this.peopleUrl = environment.apiUrl.concat('/people.json'))
-      : (this.peopleUrl = environment.apiUrl.concat('/people'));
-  }
+  peopleUrl = environment.apiUrl.concat('/people');
+  constructor(private http: HttpClient) {}
 
   getPeople(): Observable<Person[]> {
     return this.http.get<Person[]>(this.peopleUrl);
