@@ -17,6 +17,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 import { EmptyPipe } from './pipes/empty.pipe';
+import { LoadingComponent } from './components/loading/loading.component';
 
 const modules = [
   // Form controls
@@ -48,9 +49,9 @@ const modules = [
  * This all sums up to the fact that SharedModule doesn’t have any dependency to the rest of our application.
  */
 @NgModule({
-  declarations: [EmptyPipe, ConfirmDialogComponent],
+  declarations: [EmptyPipe, ConfirmDialogComponent, LoadingComponent],
   imports: [CommonModule, modules],
-  exports: [modules, EmptyPipe],
+  exports: [modules, EmptyPipe, LoadingComponent],
   entryComponents: [ConfirmDialogComponent]
 })
 export class SharedModule {}

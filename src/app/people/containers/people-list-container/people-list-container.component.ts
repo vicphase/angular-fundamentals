@@ -55,22 +55,22 @@ export class PeopleListContainerComponent implements OnInit {
     const message = '¿Seguro que desea eliminar a la persona ' + person.name + '?';
     const dialogRef = this.matDialog.open(ConfirmDialogComponent, { data: { message } });
 
-    const delete$ = this.peopleService.deletePerson(person.id).pipe(
-      switchMap(() =>
-        this.peopleService.getPeople().pipe(
-          tap(people => {
-            this.people = people;
-            this.filteredPeople = people;
-          })
-        )
-      )
-    );
-
     dialogRef
       .afterClosed()
       .pipe(
         filter(value => value),
-        switchMap(() => delete$),
+        switchMap(() =>
+          this.peopleService.deletePerson(person.id).pipe(
+            switchMap(() =>
+              this.peopleService.getPeople().pipe(
+                tap(people => {
+                  this.people = people;
+                  this.filteredPeople = people;
+                })
+              )
+            )
+          )
+        ),
         take(1)
       )
       .subscribe();
