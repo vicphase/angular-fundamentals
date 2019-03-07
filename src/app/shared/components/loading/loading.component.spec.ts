@@ -1,4 +1,7 @@
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { LoadingService } from '@app/core/services/loading.service';
+import { LoadingServiceMock } from '@app/tests/app-services/loading.service.mock';
 
 import { LoadingComponent } from './loading.component';
 
@@ -8,9 +11,10 @@ describe('LoadingComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LoadingComponent ]
-    })
-    .compileComponents();
+      declarations: [LoadingComponent],
+      providers: [{ provide: LoadingService, useClass: LoadingServiceMock }],
+      schemas: [NO_ERRORS_SCHEMA]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

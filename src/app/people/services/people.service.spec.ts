@@ -1,5 +1,7 @@
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
+import { LoadingService } from '@app/core/services/loading.service';
+import { LoadingServiceMock } from '@app/tests/app-services/loading.service.mock';
 
 import { Person } from '../models/person.model';
 import { PeopleService } from './people.service';
@@ -11,7 +13,7 @@ describe('PeopleService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      providers: [PeopleService]
+      providers: [PeopleService, { provide: LoadingService, useClass: LoadingServiceMock }]
     });
 
     service = TestBed.get(PeopleService);
