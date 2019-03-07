@@ -15,6 +15,10 @@ const routes: Routes = [
   }
 ];
 
+/**
+ * Routing module for the Auth Module
+ * Redirects to /login path if path is empty
+ */
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]

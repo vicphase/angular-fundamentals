@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
+/**
+ * This service contains the data we save when the application is running
+ */
 @Injectable()
 export class DataService {
   constructor(private router: Router) {}

@@ -12,6 +12,9 @@ import { PeopleResolverService } from './resolvers/people-resolver.service';
 import { PersonResolverService } from './resolvers/person-resolver.service';
 import { PeopleService } from './services/people.service';
 
+/**
+ * Module containing the components to work with people inside our application
+ */
 @NgModule({
   declarations: [
     PeopleListComponent,

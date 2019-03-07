@@ -4,6 +4,9 @@ import { Person } from '@app/people/models/person.model';
 import { PeopleService } from '@app/people/services/people.service';
 import { take, tap } from 'rxjs/operators';
 
+/**
+ * Container component used to handle the create or update of a person.
+ */
 @Component({
   selector: 'app-person-form-container',
   templateUrl: './person-form-container.component.html',
@@ -18,10 +21,18 @@ export class PersonFormContainerComponent implements OnInit {
     private peopleService: PeopleService
   ) {}
 
+  /**
+   * Obtains the person from the PersonResolverService.
+   */
   ngOnInit() {
     this.person = this.route.snapshot.data.resolvedPerson;
   }
 
+  /**
+   * If the person has an id it means he is already in the database and calls an update function.
+   * Else a new person is created.
+   * @param person Person obtained from the person-form component.
+   */
   submit(person: Person): void {
     if (person.id) {
       this.peopleService

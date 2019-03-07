@@ -20,6 +20,9 @@ const routes: Routes = [
   }
 ];
 
+/**
+ * Routing module of our Spa Module, it handles lazy loading to enter our People Module
+ */
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]

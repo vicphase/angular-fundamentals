@@ -22,6 +22,11 @@ const routes: Routes = [
   }
 ];
 
+/**
+ * Main routing module of our application.
+ * It lazy loads the auth, and spa module.
+ * The Spa module contains the rest of the feature modules.
+ */
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

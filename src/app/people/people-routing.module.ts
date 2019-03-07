@@ -23,6 +23,11 @@ const routes: Routes = [
   }
 ];
 
+/**
+ * Routing module for our People module, has three different routes.
+ * The first one displays the list, the second to create a new person.
+ * And the third one is to edit a person.
+ */
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]

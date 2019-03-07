@@ -6,6 +6,9 @@ import { SpaComponent } from './components/spa/spa.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { SpaRoutingModule } from './spa-routing.module';
 
+/**
+ * Module that contains components we see all time when we are inside the application
+ */
 @NgModule({
   declarations: [SpaComponent, ToolbarComponent],
   imports: [

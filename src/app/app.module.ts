@@ -9,6 +9,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 
+/**
+ * Main module of our application where the main component is bootstraped.
+ * Also the main modules are imported here.
+ */
 @NgModule({
   declarations: [AppComponent],
   imports: [

@@ -1,15 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
+/**
+ * Component that handles the routing inside our application
+ */
 @Component({
   selector: 'app-spa',
   templateUrl: './spa.component.html',
   styleUrls: ['./spa.component.scss']
 })
-export class SpaComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}
+export class SpaComponent {}
